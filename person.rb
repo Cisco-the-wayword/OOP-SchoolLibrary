@@ -6,9 +6,10 @@ class Person < Nameable
     @name = name
     @age = age
     @parent_permission = parent_permission
+    @rentals = []
     super()
   end
-  attr_accessor :name, :age
+  attr_accessor :name, :age, :rentals
   attr_reader :id
 
   def can_use_services?
@@ -19,9 +20,15 @@ class Person < Nameable
     @name
   end
 
+  def add_rental(book, date)
+    rental = Rental.new(date, self, book)
+    book.add_rental(rental)
+    rental
+  end
+
   private
 
-  def of_age
+  def of_age?
     @age >= 18
   end
 end
