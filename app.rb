@@ -1,0 +1,160 @@
+require './student'
+require './teacher'
+require './book'
+require './rental'
+
+class App
+  def initialize(parent)
+    @parent = parent
+    @books_list = []
+    @people_list = []
+    @rentals_list = []
+  end
+
+  def list_all_books
+    if @books_list.empty?
+      puts 'No record found! Add some books...'
+    else
+      puts 'Available books in the library'
+      @books_list.each { |book| puts "Title: #{book.title}, Author: #{book.author}" }
+    end
+    @parent.show_menu
+  end
+
+  def list_all_people
+    if @people_list.empty?
+      puts 'No record found! Add a person...'
+    else
+      puts 'All people in the library'
+      @people_list.each do |person|
+        puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+      end
+    end
+    @parent.show_menu
+  end
+
+  def create_person
+    puts 'Existing people in the library:'
+    list_all_people
+
+    print 'Do you want to create a student(1) or a teacher(2)? [Input the number]: '
+    person_role = gets.chomp
+    case person_role
+    when '1'
+      create_student
+    when '2'
+      create_teacher
+    else
+      puts 'Please add a valid input!'
+    end
+    @parent.show_menu
+  end
+
+  def create_student
+    print 'Age: '
+    age = gets.chomp.to_i
+    print 'Name: '
+    name = gets.chomp
+    print 'Has parent permission? [Y/N]: '
+    parent_permission = gets.chomp.downcase == 'y'
+    @people_list.push(Student.new(age, name, parent_permission: parent_permission))
+    puts 'Person created successfully'
+  end
+
+  def create_teacher
+    print 'Age: '
+    age = gets.chomp
+    print 'Name: '
+    name = gets.chomp
+    print 'Specialization: '
+    specialization = gets.chomp
+    @people_list.push(Teacher.new(age, specialization, name))
+    puts 'Person created successfully'
+  end
+
+  def create_book
+    print 'Title: '
+    title = gets.chomp
+    print 'Author: '
+    author = gets.chomp
+    @books_list.push(Book.new(title, author))
+    puts 'Book created successfully'
+    @parent.show_menu
+  end
+
+  def create_rental
+    puts 'Select a book from the following list by number'
+    @books_list.each_with_index { |book, index| puts "#{index}) Title: '#{book.title}', Author: #{book.author}" }
+    book_num = gets.chomp.to_i
+    puts
+    puts 'Select a person from the following list by number (not id)'
+    @people_list.each_with_index do |person, index|
+      puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+    end
+    person_num = gets.chomp.to_i
+
+    print 'Date: '
+    date = gets.chomp
+    @rentals_list.push(Rental.new(date, @books_list[book_num], @people_list[person_num]))
+    puts 'Rental created successfully'
+    @parent.show_menu
+  end
+
+  def list_all_rentals
+    puts 'Existing people in the library:'
+    list_all_people
+
+    print 'ID of person: '
+    id = gets.chomp.to_i
+
+    puts 'Rentals:'
+    @rentals_list.each do |rental|
+      puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}" if rental.person.id == id
+    end
+    @parent.show_menu
+  end
+
+  def exit
+    puts 'Thank you for using the app, see you later!'
+  end
+end
+
+class ParentApp
+  def show_menu
+    puts
+    puts '----- Welcome to the Library App -----'
+    puts 'Choose an option:'
+    puts '1) List all books'
+    puts '2) List all people'
+    puts '3) Create a person'
+    puts '4) Create a book'
+    puts '5) Create a rental'
+    puts '6) List all rentals by person'
+    puts '7) Exit'
+    print 'Your choice: '
+    choice = gets.chomp.to_i
+
+    case choice
+    when 1
+      list_all_books
+    when 2
+      list_all_people
+    when 3
+      create_person
+    when 4
+      create_book
+    when 5
+      create_rental
+    when 6
+      list_all_rentals
+    when 7
+      exit
+    else
+      puts 'Invalid choice! Please try again.'
+      show_menu
+    end
+  end
+end
+
+app = App.new(ParentApp.new)
+app.show_menu
