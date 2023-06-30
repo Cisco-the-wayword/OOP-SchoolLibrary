@@ -1,7 +1,7 @@
-require './student'
-require './teacher'
-require './book'
-require './rental'
+require 'student'
+require 'teacher'
+require 'book'
+require 'rental'
 
 class App
   def initialize(parent)
@@ -121,17 +121,15 @@ end
 
 class ParentApp
   def show_menu
-    puts
-    puts '----- Welcome to the Library App -----'
-    puts 'Choose an option:'
-    puts '1) List all books'
-    puts '2) List all people'
-    puts '3) Create a person'
-    puts '4) Create a book'
-    puts '5) Create a rental'
-    puts '6) List all rentals by person'
-    puts '7) Exit'
-    print 'Your choice: '
+    puts 'Please select an option:'
+    puts '1. List all books'
+    puts '2. List all people'
+    puts '3. Create a person'
+    puts '4. Create a book'
+    puts '5. Create a rental'
+    puts '6. List all rentals'
+    puts '7. Exit'
+    print 'Enter your choice: '
     choice = gets.chomp.to_i
 
     case choice
@@ -150,10 +148,11 @@ class ParentApp
     when 7
       exit
     else
-      puts 'Invalid choice! Please try again.'
+      puts 'Invalid choice. Please try again.'
       show_menu
     end
   end
+
 end
 
 app = App.new(ParentApp.new)
