@@ -7,16 +7,6 @@ AllCops:
 
   DisplayCopNames: true
 
-# .rubocop.yml
-Metrics/BlockLength:
-  Exclude:
-    - 'app.rb' # Add the file path(s) you want to exclude from this cop
-  AllowedMethods:
-    - some_method_name # Add the allowed method(s) you want to exclude from this cop
-  AllowedPatterns:
-    - '^prefix_' # Add the allowed method name pattern(s) you want to exclude from this cop
-
-
 Layout/LineLength:
   Max: 120
 Metrics/MethodLength:
