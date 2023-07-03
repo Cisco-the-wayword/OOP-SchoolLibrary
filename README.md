@@ -1,4 +1,4 @@
-# OOP-SchoolLibrary
+# OOP-School Library
 
 
 
@@ -99,7 +99,11 @@ Example commands:
 - Twitter: [@the_wayword1](https://twitter.com/the_wayword1)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/boluwatife-adegboyega/)
 
+👤 **Naan Mohammed**
 
+- GitHub: [@naanmohammed](https://github.com/naanmohammed)
+- Twitter: [@_naanahmed](https://twitter.com/_naanahmed)
+- LinkedIn: [naanahmed](https://linkedin.com/in/naanahmed)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
