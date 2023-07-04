@@ -1,7 +1,7 @@
-require_relative 'book_methods'
-require_relative 'person_methods'
-require_relative 'rental_methods'
-require_relative 'storage'
+require_relative 'Methods/book_methods'
+require_relative 'Methods/person_methods'
+require_relative 'Methods/rental_methods'
+require_relative 'Book/storage'
 
 class App
   def initialize(options)

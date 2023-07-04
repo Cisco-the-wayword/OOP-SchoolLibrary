@@ -1,4 +1,4 @@
-require_relative 'rental'
+require_relative '../Person/rental'
 
 class RentalMethods
   attr_accessor :rentals_list
