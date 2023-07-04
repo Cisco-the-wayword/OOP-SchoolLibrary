@@ -1,4 +1,4 @@
-require 'person'
+require './Person/person'
 require 'decorator'
 
 person = Person.new(1, 22, 'maximilianus')

@@ -1,6 +1,6 @@
-require_relative 'person'
-require_relative 'student'
-require_relative 'teacher'
+require_relative '../Person/person'
+require_relative '../Person/student'
+require_relative '../Person/teacher'
 
 class PersonMethods
   attr_accessor :people_list

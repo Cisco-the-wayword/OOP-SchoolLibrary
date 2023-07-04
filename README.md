@@ -26,7 +26,7 @@
 
 # 📖 School Library <a name="about-project"></a>
 
-> This project is for you to start building your school library app. The first step is to implement the classes to represent students and teachers.
+The School Library OOP app is a school library management system that allows users to perform various operations related to books, persons (students and teachers), and rentals. The app utilizes object-oriented programming principles to organize and structure the code.
 
 
 ## 🛠 Built With <a name="built-with"></a>
