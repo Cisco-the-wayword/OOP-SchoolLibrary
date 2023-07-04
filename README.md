@@ -24,7 +24,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [School Library <a name="about-project"></a>
+# 📖 School Library <a name="about-project"></a>
 
 > This project is for you to start building your school library app. The first step is to implement the classes to represent students and teachers.
 
@@ -61,7 +61,7 @@
 
 ```sh
   cd my-folder
-  git clone https://github.com/Cisco-the wayword/OOP-SchoolLibrary.git
+  git clone https://github.com/Cisco-the-wayword/OOP-SchoolLibrary.git
 ```
 
 
@@ -71,8 +71,8 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-- A working web browser.
-- A good IDE e.g Visual Studio Code.
+- A working Ruby installation.
+- A good IDE.
 
 
 ### Setup
