@@ -49,7 +49,8 @@
 - **Implement classes and objects in Ruby.**
 - **Implement encapsulation and inheritance with Ruby.**
 - **Run a program using the command line.**
-
+- **Implement Ruby unit testing with RSPEC
+  
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
