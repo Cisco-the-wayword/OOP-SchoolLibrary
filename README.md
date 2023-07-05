@@ -105,6 +105,12 @@ Example commands:
 - Twitter: [@_naanahmed](https://twitter.com/_naanahmed)
 - LinkedIn: [naanahmed](https://linkedin.com/in/naanahmed)
 
+👤 **Naan Mohammed**
+
+- GitHub: [Github](https://github.com/Mylo16)
+- Twitter: [Twitter](https://twitter.com/EricAntwi384)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/ericopokuantwi)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
