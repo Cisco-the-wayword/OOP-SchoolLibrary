@@ -7,7 +7,7 @@ RSpec.describe Student do
   let(:name) { 'Jane Doe' }
   let(:student) { Student.new(age, classroom, name) }
 
-  describe 'initailize' do
+  describe 'initialize' do
     it 'should create new student object' do
       expect(student.age).to eq(age)
       expect(student.classroom).to eq(classroom)
@@ -16,9 +16,28 @@ RSpec.describe Student do
     end
   end
 
-  describe 'play hooky' do
+  describe 'play_hooky' do
     it 'student plays hooky' do
       expect(student.play_hooky).to eq('¯\\(ツ)/¯')
+    end
+  end
+
+  describe 'classroom=' do
+    let(:classroom) { Classroom.new('Maths') }
+
+    it 'sets the classroom attribute of the student' do
+      student.send(:classroom=, classroom)
+      expect(student.classroom).to eq(classroom)
+    end
+
+    it 'adds the student to the classroom if not already included' do
+      student.send(:classroom=, classroom)
+      expect(classroom.students).to include(student)
+    end
+
+    it 'does not add the student to the classroom if already included' do
+      classroom.students.push(student)
+      expect { student.send(:classroom=, classroom) }.not_to(change { classroom.students.count })
     end
   end
 end
