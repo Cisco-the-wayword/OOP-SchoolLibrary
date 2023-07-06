@@ -106,7 +106,7 @@ Example commands:
 - Twitter: [@_naanahmed](https://twitter.com/_naanahmed)
 - LinkedIn: [naanahmed](https://linkedin.com/in/naanahmed)
 
-👤 **Naan Mohammed**
+👤 **Eric Opoku Antwi**
 
 - GitHub: [Github](https://github.com/Mylo16)
 - Twitter: [Twitter](https://twitter.com/EricAntwi384)
